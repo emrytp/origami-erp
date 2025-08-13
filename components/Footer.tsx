@@ -1,90 +1,82 @@
-'use client';
+'use client'; 
 
 import Link from 'next/link';
-import Image from 'next/image';
+import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 export default function Footer() {
   return (
     <footer className="w-full bg-[#0D152E] text-white">
-      <div className="max-w-7xl mx-auto px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Marka */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center">
-                <Image
-                  src="/origami.png"
-                  alt="Origami Logo"
-                  width={48}
-                  height={48}
-                  className="object-contain"
-                />
-              </div>
-              <span className="text-2xl font-bold">Origami ERP</span>
+      <div className="max-w-7xl mx-auto px-8 py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+        {/* Marka */}
+        <div>
+          <Link href="/" className="flex items-center space-x-3 mb-6">
+            <img src="/origami.png" alt="Origami Logo" className="w-15 h-12" />
+          </Link>
+          <p className="text-gray-300 text-sm leading-relaxed">
+            Origami Yazılım olarak, işletmelerin dijital dönüşümünü hızlandıran modern ERP çözümleri sunuyoruz.
+          </p>
+        </div>
+
+        {/* Ürünler */}
+        <div>
+          <h3 className="text-lg font-bold mb-4">Ürünler</h3>
+          <ul className="space-y-2">
+            <li><Link href="/products" className="hover:underline">ERP Modülleri</Link></li>
+            <li><Link href="/products" className="hover:underline">Entegrasyonlar</Link></li>
+            <li><Link href="/products" className="hover:underline">Endüstri Çözümleri</Link></li>
+            <li><Link href="/products" className="hover:underline">Mobil Uygulamalar</Link></li>
+          </ul>
+        </div>
+
+        {/* Çözümler */}
+        <div>
+          <h3 className="text-lg font-bold mb-4">Çözümler</h3>
+          <ul className="space-y-2">
+            <li><Link href="/solutions" className="hover:underline">Üretim</Link></li>
+            <li><Link href="/solutions" className="hover:underline">Perakende & E-Ticaret</Link></li>
+            <li><Link href="/solutions" className="hover:underline">İnşaat</Link></li>
+            <li><Link href="/solutions" className="hover:underline">Savunma Sanayi</Link></li>
+          </ul>
+        </div>
+
+        {/* İletişim + Sosyal Medya */}
+        <div>
+          <h3 className="text-lg font-bold mb-4">İletişim</h3>
+          <ul className="space-y-2 text-sm text-gray-300 mb-4">
+            <li>📍 Armada İş Merkezi Dumlupınar Bulvarı 6A/14 Beştepe, Ankara 06560</li>
+            <li>📞 +90 312 000 00 00</li>
+            <li>✉️ origami@origamierp.com</li>
+          </ul>
+
+          <h3 className="text-lg font-bold mb-4">Sosyal Medya</h3>
+          <div className="flex space-x-4">
+            <Link
+              href="https://www.instagram.com/origami_yazilim/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-500 transition-colors duration-300"
+            >
+              <FaInstagram className="w-6 h-6" />
             </Link>
-            <p className="text-gray-300 leading-relaxed mb-6">
-              İşletmenizin ritmine uyum sağlayan ve hedeflerinizle büyüyen akıllı kurumsal yazılım.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-[#C8102E] rounded-xl flex items-center justify-center transition-colors duration-300 cursor-pointer">
-                <i className="ri-linkedin-fill text-lg"></i>
-              </a>
-              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-[#C8102E] rounded-xl flex items-center justify-center transition-colors duration-300 cursor-pointer">
-                <i className="ri-twitter-fill text-lg"></i>
-              </a>
-              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-[#C8102E] rounded-xl flex items-center justify-center transition-colors duration-300 cursor-pointer">
-                <i className="ri-facebook-fill text-lg"></i>
-              </a>
-            </div>
-          </div>
-
-          {/* Çözümler */}
-          <div>
-            <h4 className="text-lg font-bold mb-6">Çözümler</h4>
-            <ul className="space-y-4">
-              <li><Link href="/manufacturing" className="text-gray-300 hover:text-white">Üretim</Link></li>
-              <li><Link href="/retail" className="text-gray-300 hover:text-white">Perakende & E-Ticaret</Link></li>
-              <li><Link href="/construction" className="text-gray-300 hover:text-white">İnşaat</Link></li>
-              <li><Link href="/education" className="text-gray-300 hover:text-white">Eğitim</Link></li>
-            </ul>
-          </div>
-
-          {/* Ürün */}
-          <div>
-            <h4 className="text-lg font-bold mb-6">Ürün</h4>
-            <ul className="space-y-4">
-              <li><Link href="/features" className="text-gray-300 hover:text-white">Özellikler</Link></li>
-              <li><Link href="/integrations" className="text-gray-300 hover:text-white">Entegrasyonlar</Link></li>
-              <li><Link href="/security" className="text-gray-300 hover:text-white">Güvenlik</Link></li>
-              <li><Link href="/api" className="text-gray-300 hover:text-white">API Dökümanları</Link></li>
-            </ul>
-          </div>
-
-          {/* Destek */}
-          <div>
-            <h4 className="text-lg font-bold mb-6">Destek</h4>
-            <ul className="space-y-4">
-              <li><Link href="/support" className="text-gray-300 hover:text-white">Yardım Merkezi</Link></li>
-              <li><Link href="/contact" className="text-gray-300 hover:text-white">İletişim</Link></li>
-              <li><Link href="/training" className="text-gray-300 hover:text-white">Eğitim & Kaynaklar</Link></li>
-              <li><Link href="/status" className="text-gray-300 hover:text-white">Sistem Durumu</Link></li>
-            </ul>
+            <Link
+              href="https://www.linkedin.com/feed/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition-colors duration-300"
+            >
+              <FaLinkedin className="w-6 h-6" />
+            </Link>
           </div>
         </div>
+      </div>
 
-        {/* Alt Çubuk */}
-        <div className="border-t border-white/20 mt-16 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-300 text-sm">
-              © 2025 Origami ERP. Tüm hakları saklıdır.
-            </div>
-            <div className="flex space-x-8">
-              <Link href="/privacy" className="text-gray-300 hover:text-white text-sm">Gizlilik Politikası</Link>
-              <Link href="/terms" className="text-gray-300 hover:text-white text-sm">Kullanım Şartları</Link>
-              <Link href="/kvkk" className="text-gray-300 hover:text-white text-sm">KVKK</Link>
-            </div>
-          </div>
-        </div>
+      {/* Alt Bilgi */}
+      <div className="border-t border-gray-700 text-center py-6 text-sm text-gray-400">
+        © {new Date().getFullYear()} Origami Yazılım. Tüm Hakları Saklıdır. |{' '}
+        <Link href="/kvkk" className="hover:underline">
+          KVKK Aydınlatma Metni
+        </Link>
       </div>
     </footer>
   );
