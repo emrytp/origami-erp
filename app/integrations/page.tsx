@@ -3,6 +3,12 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});
 
 const LOGOS = [
   { src: '/entegrasyonlar/entegrasyon1.png', alt: 'Entegrasyon 1' },
@@ -20,7 +26,7 @@ export default function IntegrationsPage() {
       <Header />
 
       {/* HERO */}
-      <section className="relative w-full min-h-[50vh] flex items-center justify-center text-white mt-[88px]">
+      <section className="relative w-full h-[55vh] md:h-[60vh] flex items-center justify-center text-white mt-[88px]">
         <Image
           src="/entegrasyonlar/entegrasyonbanner.png"
           alt="Entegrasyonlarımız"
@@ -30,12 +36,11 @@ export default function IntegrationsPage() {
         />
         <div className="absolute inset-0 bg-black/45" />
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
-            Başarılarımız, müşterilerimizin bize duyduğu güvenle şekilleniyor.
+          <h1 className={`${poppins.className} text-4xl md:text-5xl font-semibold leading-tight tracking-tight`}>
+            Entegrasyonlarımızla Avantaj Sağlayın!
           </h1>
-          <p className="mt-5 text-lg md:text-xl text-white/90 leading-relaxed">
-            Origami Yazılım olarak, farklı sektörlerdeki iş ortaklarımıza yenilikçi ve kişiselleştirilebilir yazılım çözümleri sunmaktan gurur duyuyoruz.
-            İş süreçlerini dönüştürerek verimlilik ve rekabet avantajı sağlayan projelerimiz, iş dünyasında kalıcı değer yaratmaya odaklanmaktadır.
+          <p className={`${poppins.className} mt-5 text-lg md:text-xl text-white/90 leading-relaxed`}>
+Teknoloji dünyasındaki hızlı değişimlere uyum sağlamak ve iş süreçlerinizi dönüştürmek için geliştirdiğimiz çözümler, işletmenize rekabet avantajı kazandırır. Origami Yazılım, size ihtiyacınıza özel entegrasyon çözümleri sunarak daha güçlü bir dijital altyapı sağlar.
           </p>
         </div>
       </section>

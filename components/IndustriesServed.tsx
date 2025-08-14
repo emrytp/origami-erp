@@ -1,6 +1,7 @@
-'use client';
+'use client'; 
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { motion, type Variants } from 'framer-motion';
 
 type Item = { id: string; title: string; description: string; image: string };
@@ -65,6 +66,9 @@ function IndustryCard({ item }: { item: Item }) {
 }
 
 export default function IndustriesServed() {
+  const params = useSearchParams();
+  const targetId = params.get('industry'); // manufacturing | retail | construction | defense
+
   const items: Item[] = [
     {
       id: 'manufacturing',
@@ -99,9 +103,30 @@ export default function IndustriesServed() {
     },
   ];
 
+  // URL'den gelen industry parametresine göre ilgili karta kaydır + kısa vurgu
+  useEffect(() => {
+    if (!targetId) return;
+    const el = document.getElementById(targetId);
+    if (!el) return;
+
+    // görünürlük/animasyonlar için ufak bir gecikme iyi olur
+    const t0 = setTimeout(() => {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      el.classList.add('ring-2', 'ring-[#C8102E]', 'ring-offset-2', 'ring-offset-white');
+      const t1 = setTimeout(() => {
+        el.classList.remove('ring-2', 'ring-[#C8102E]', 'ring-offset-2', 'ring-offset-white');
+      }, 1200);
+
+      return () => clearTimeout(t1);
+    }, 150);
+
+    return () => clearTimeout(t0);
+  }, [targetId]);
+
   return (
     <section id="industries-served" className="w-full py-24 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-8">{/* <-- buradaki mx-auto doğru yazıldı */}
+      <div className="max-w-7xl mx-auto px-8">
         {/* Başlık */}
         <motion.div
           className="text-center mb-16"

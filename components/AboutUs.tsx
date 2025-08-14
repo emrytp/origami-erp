@@ -9,8 +9,8 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      {/* HERO */}
-      <section className="relative w-full h-[90vh] flex items-center justify-center text-white overflow-hidden">
+      {/* HERO (full screen) */}
+      <section className="relative w-full h-screen flex items-center justify-center text-white overflow-hidden">
         <Image
           src="/team.jpg"
           alt="Origami Yazılım Ekibi"
@@ -32,16 +32,18 @@ export default function AboutPage() {
             </span>
           </h1>
           <p className="mt-4 text-white/90 text-base sm:text-lg leading-relaxed">
-            Origami Yazılım; ölçeklenebilir ERP çözümleriyle süreçlerinizi sadeleştirir, verimliliği artırır ve
-            büyümenize hız katar. Teknolojiyi iş hedeflerinize hizalayarak uzun vadeli değer üretiriz.
+            Origami Yazılım; ölçeklenebilir ERP çözümleriyle süreçlerinizi sadeleştirir,
+            verimliliği artırır ve büyümenize hız katar. Teknolojiyi iş hedeflerinize hizalayarak
+            uzun vadeli değer üretiriz.
           </p>
           <div className="mt-7 flex items-center justify-center gap-3 sm:gap-4">
             <Link
-              href="#demo"
-              className="inline-flex items-center rounded-xl px-5 py-3 text-sm sm:text-base font-semibold bg-gradient-to-r from-[#C8102E] to-[#A00D26] hover:opacity-95 active:opacity-90 shadow-lg shadow-red-900/20 transition"
-            >
-              Demo Talep Et
+           href="/contact"
+           className="inline-flex items-center rounded-xl px-5 py-3 text-sm sm:text-base font-semibold bg-gradient-to-r from-[#C8102E] to-[#A00D26] hover:opacity-95 active:opacity-90 shadow-lg shadow-red-900/20 transition"
+ >
+            Demo Talep Et
             </Link>
+
             <Link
               href="#moduller"
               className="inline-flex items-center rounded-xl px-5 py-3 text-sm sm:text-base font-semibold border border-white/25 hover:border-white/45 bg-white/5 hover:bg-white/10 transition backdrop-blur-[2px]"
@@ -58,27 +60,22 @@ export default function AboutPage() {
       </section>
 
       {/* HİKAYEMİZ */}
-      <section
-        className="w-full relative bg-gradient-to-b from-gray-50 to-white
-                   before:content-[''] before:absolute before:inset-0
-                   before:bg-[radial-gradient(60rem_40rem_at_50%_-10%,rgba(200,16,46,0.06),transparent)]
-                   before:pointer-events-none"
-      >
-        <div className="max-w-3xl mx-auto px-8 py-16 lg:py-20 text-center">
-          <h2 className="relative inline-block text-3xl lg:text-4xl font-serif font-bold text-[#0D152E] tracking-wide">
-            Hikayemiz
-            <span className="absolute left-1/2 -bottom-2 w-16 h-[3px] bg-gradient-to-r from-[#C8102E] to-[#FFB3BF] -translate-x-1/2 rounded-full" />
-          </h2>
-          <p className="mt-8 text-gray-700 leading-loose text-lg font-light">
-            Kurulduğumuz günden bu yana odağımız net: işletmelerin karmaşık iş süreçlerini yalın, anlaşılır ve
-            ölçülebilir hale getirmek. Modüler mimari, hızlı kurulum ve sektör uyumlu paketlerle ekiplerin günlük
-            işlerini kolaylaştırıyoruz.
-          </p>
-          <p className="mt-5 text-gray-700 leading-loose text-lg font-light">
-            Gerçek zamanlı raporlama ve kullanıcı dostu arayüzlerle karar alma hızını artırıyor; uzun vadeli
-            sürdürülebilirlik için sağlam bir veri omurgası kuruyoruz.
-          </p>
-        </div>
+      <section className="max-w-6xl mx-auto px-8 py-16 lg:py-20 text-center">
+        <h2 className="relative inline-block text-3xl lg:text-4xl font-serif font-bold text-[#0D152E] tracking-wide">
+          Hikayemiz
+          <span className="absolute left-1/2 -bottom-2 w-16 h-[3px] bg-gradient-to-r from-[#C8102E] to-[#FFB3BF] -translate-x-1/2 rounded-full" />
+        </h2>
+        <p className="mt-8 text-gray-700 leading-loose text-lg font-light">
+          <strong>Origami Yazılım</strong>, özel ERP çözümleri tasarlayan ve geliştiren bir teknoloji firmasıdır.
+          Kurulduğumuz günden bu yana odağımız net: işletmelerin karmaşık iş süreçlerini yalın, anlaşılır ve
+          ölçülebilir hale getirmek. Müşterilerimizin ihtiyaçlarına yönelik yenilikçi araçlar sunarak,
+          iş süreçlerini optimize etmeyi hedefliyoruz. Modüler mimari, hızlı kurulum ve sektör uyumlu paketlerle
+          ekiplerin günlük işlerini kolaylaştırıyor, gerçek zamanlı raporlama ve kullanıcı dostu arayüzlerle karar
+          alma hızını artırıyoruz. Deneyimli ekibimiz, karmaşık endüstrileri anlama konusunda uzmanlaşmış olup bu bilgi
+          birikimini projelerimize entegre ediyor; uzun vadeli sürdürülebilirlik için sağlam bir veri omurgası
+          kuruyoruz. Dürüstlük ve iş ahlakı ilkelerimizle, müşterilerimize güvenilir, şeffaf ve ölçülebilir sonuçlar
+          sunmayı taahhüt ediyoruz.
+        </p>
       </section>
 
       {/* MİSYON & VİZYON */}
@@ -92,7 +89,7 @@ export default function AboutPage() {
             </p>
             <h3 className="mt-3 text-4xl lg:text-5xl font-extrabold text-white relative inline-block font-serif">
               Misyon & Vizyon
-              <span className="block w-24 h-[3px] bg-gradient-to-r from-[#C8102E] to-[#FFB3BF] mx-auto mt-3 rounded-full"></span>
+              <span className="block w-24 h-[3px] bg-gradient-to-r from-[#C8102E] to-[#FFB3BF] mx-auto mt-3 rounded-full" />
             </h3>
           </div>
           <div className="grid md:grid-cols-2 gap-8">

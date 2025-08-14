@@ -29,23 +29,23 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Çözümler */}
-        <div>
-          <h3 className="text-lg font-bold mb-4">Çözümler</h3>
-          <ul className="space-y-2">
-            <li><Link href="/solutions" className="hover:underline">Üretim</Link></li>
-            <li><Link href="/solutions" className="hover:underline">Perakende & E-Ticaret</Link></li>
-            <li><Link href="/solutions" className="hover:underline">İnşaat</Link></li>
-            <li><Link href="/solutions" className="hover:underline">Savunma Sanayi</Link></li>
-          </ul>
-        </div>
+       {/* Çözümler */}
+      <div>
+    <h3 className="text-lg font-bold mb-4">Çözümler</h3>
+    <ul className="space-y-2">
+    <li><Link href="/?industry=manufacturing" className="hover:underline">Üretim</Link></li>
+    <li><Link href="/?industry=retail" className="hover:underline">Perakende & E-Ticaret</Link></li>
+    <li><Link href="/?industry=construction" className="hover:underline">İnşaat</Link></li>
+    <li><Link href="/?industry=defense" className="hover:underline">Savunma Sanayi</Link></li>
+      </ul>
+      </div>
 
         {/* İletişim + Sosyal Medya */}
         <div>
           <h3 className="text-lg font-bold mb-4">İletişim</h3>
           <ul className="space-y-2 text-sm text-gray-300 mb-4">
             <li>📍 Armada İş Merkezi Dumlupınar Bulvarı 6A/14 Beştepe, Ankara 06560</li>
-            <li>📞 +90 312 000 00 00</li>
+            <li>📞 +90 (312) 222 23 20</li>
             <li>✉️ origami@origamierp.com</li>
           </ul>
 
