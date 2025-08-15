@@ -29,7 +29,6 @@ export default function Footer() {
             </li>
             <li><Link href="/integrations" className="hover:underline">Entegrasyonlar</Link></li>
             <li><Link href="/services" className="hover:underline">Hizmetlerimiz</Link></li>
-            <li><Link href="/products" className="hover:underline">Mobil Uygulamalar</Link></li>
           </ul>
         </div>
 

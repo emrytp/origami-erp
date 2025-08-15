@@ -50,10 +50,6 @@ export default function ContactForm() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
             Bizimle iletişime geçin
           </h2>
-          <p className="mt-3 text-white/70">
-            Sorunuz mu var? Formu gönderin, genelde{' '}
-            <span className="font-semibold text-white">1–3 saat</span> içinde dönüş yapıyoruz.
-          </p>
         </div>
 
         {/* Form */}

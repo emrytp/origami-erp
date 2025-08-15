@@ -80,7 +80,7 @@ export default function IndustriesServed() {
     },
     {
       id: 'retail',
-      title: 'Perakende & E-Ticaret',
+      title: 'Perakende ‎‎ & E-Ticaret',
       image:
         'https://readdy.ai/api/search-image?query=Modern%20retail%20store%20environment%20with%20digital%20displays%20and%20point%20of%20sale%20systems%2C%20clean%20contemporary%20retail%20space%20with%20technology%20integration&width=300&height=200&seq=retail-industry&orientation=landscape',
       description:

@@ -21,7 +21,7 @@ const PRODUCTS: Product[] = [
   {
     id: 'mobile',
     title: 'Origami Yazılım Mobil',
-    slug: '/urunler/origami-yazilim-mobil',
+    slug: '/contact',
     category: 'Mobil',
     summary:
       'Saha ekipleri ve yöneticiler için iOS/Android uygulaması. Anlık bildirim, çevrimdışı çalışma, hızlı onay akışları.',
@@ -32,18 +32,18 @@ const PRODUCTS: Product[] = [
   {
     id: 'erp',
     title: 'Origami ERP',
-    slug: '/urunler/origami-erp',
+    slug: '/contact',
     category: 'ERP',
     summary:
       'Modüler mimari, güçlü raporlama ve sınırsız entegrasyon. Büyüyen ekipler için esnek kurumsal altyapı.',
     features: ['Modül tabanlı yapı', 'Gerçek zamanlı raporlama', 'Rol/Yetki yönetimi', 'API & Webhook'],
     image: '/hero.png',
-    badge: 'Yeni sürüm 2.4',
+    badge: 'Origami ERP',
   },
   {
     id: 'uao',
     title: 'UAO Mobil Uygulaması',
-    slug: '/urunler/uao-mobil',
+    slug: '/contact',
     category: 'Mobil',
     summary:
       'United Aikido Organisation için özelleştirilmiş mobil yönetim uygulaması. ERP entegrasyonlu üyelik & etkinlik yönetimi.',
