@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function DemoProcess() {
   const steps = [
     {
@@ -83,16 +85,18 @@ export default function DemoProcess() {
 
         {/* CTA Buton */}
         <div className="text-center mt-16">
-          <button
-            className="px-12 py-4 text-lg font-bold tracking-wide rounded-xl 
-                       bg-gradient-to-r from-[#C8102E] to-[#A00D26] 
-                       hover:bg-gradient-to-l hover:from-[#C8102E] hover:to-[#A00D26] 
-                       shadow-lg hover:shadow-red-900/30 
-                       text-white transition-all duration-300 
-                       transform hover:-translate-y-1 hover:scale-[1.02]"
-          >
-            Demo Yolculuğuna Başla
-          </button>
+          <Link href="/contact">
+            <button
+              className="px-12 py-4 text-lg font-bold tracking-wide rounded-xl 
+                         bg-gradient-to-r from-[#C8102E] to-[#A00D26] 
+                         hover:bg-gradient-to-l hover:from-[#C8102E] hover:to-[#A00D26] 
+                         shadow-lg hover:shadow-red-900/30 
+                         text-white transition-all duration-300 
+                         transform hover:-translate-y-1 hover:scale-[1.02]"
+            >
+              Demo Yolculuğuna Başla
+            </button>
+          </Link>
         </div>
       </div>
     </section>

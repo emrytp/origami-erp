@@ -50,14 +50,14 @@ export default function ServicesPage() {
       Icon: FiSmartphone,
       title: 'Mobil Uygulamalar',
       desc: 'iOS/Android için ERP süreçlerinizi cepten yönetin.',
-      bullets: ['React Native', 'Offline senaryolar', 'Push bildirim'],
+      bullets: ['Sahadan anlık veri girişi', 'Mobil görev ve onay akışları', 'Müşteri ve ekip anında senkron'],
       color: 'from-[#00B894] to-[#0984E3]',
     },
     {
       Icon: FiBarChart2,
       title: 'Danışmanlık & Analitik',
       desc: 'Veri odaklı kararlar, raporlama ve gösterge panelleri.',
-      bullets: ['Power BI/Grafana', 'Tahminleme', 'Operasyonel raporlar'],
+      bullets: ['Gerçek zamanlı performans takibi', 'Her an güncel raporlar elinizin altında', 'İşletmenizin tüm departmanlarını tek panelden izleyin'],
       color: 'from-[#FF8A00] to-[#FF2D55]',
     },
   ];

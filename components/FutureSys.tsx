@@ -1,10 +1,11 @@
 'use client';
+import Link from 'next/link';
 import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-screen bg-gradient-to-br from-white to-gray-50 overflow-hidden flex items-center">
+    <section className="relative w-full bg-gradient-to-br from-white to-gray-50 overflow-hidden flex items-center">
       {/* Blur arka planlar */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#C8102E] opacity-10 blur-[140px] rounded-full" />
@@ -26,15 +27,17 @@ export default function Hero() {
         />
       </svg>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          
+      <div className="max-w-7xl mx-auto px-6 lg:px-12
+                      pt-[clamp(4rem,7vw,6rem)]
+                      pb-[clamp(1.25rem,3.5vw,2.5rem)]">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-20 items-center">
+
           {/* Sol Metin */}
           <motion.div
-            className="space-y-8 pt-10 z-10"
+            className="space-y-8 pt-2 z-10"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0D152E] leading-tight tracking-tight">
               İşinizi Geleceğe Taşıyacak <br className="hidden lg:block" />
@@ -46,18 +49,23 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="bg-[#C8102E] hover:bg-[#A00D26] text-white px-10 py-4 text-base font-semibold rounded-lg shadow-md transition"
-              >
-                Teklif Al
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="border border-[#C8102E] text-[#C8102E] hover:bg-[#C8102E] hover:text-white px-10 py-4 text-base font-semibold rounded-lg transition"
-              >
-                Ürünü İncele
-              </motion.button>
+              <Link href="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="bg-[#C8102E] hover:bg-[#A00D26] text-white px-10 py-4 text-base font-semibold rounded-lg shadow-md transition"
+                >
+                  Teklif Al
+                </motion.button>
+              </Link>
+
+              <Link href="/urunler">
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="border border-[#C8102E] text-[#C8102E] hover:bg-[#C8102E] hover:text-white px-10 py-4 text-base font-semibold rounded-lg transition"
+                >
+                  Ürünü İncele
+                </motion.button>
+              </Link>
             </div>
 
             <div className="text-sm text-gray-500 flex items-center gap-6 pt-4">
@@ -69,9 +77,9 @@ export default function Hero() {
           {/* Sağ Görsel */}
           <motion.div
             className="relative z-10"
-            initial={{ opacity: 0, x: 50, rotate: 3 }} // Başlangıçta sağa yatık
-            animate={{ opacity: 1, x: 0, rotate: 3 }} // Yüklenince de yatık kalır
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            initial={{ opacity: 0, x: 50, rotate: 3 }}
+            animate={{ opacity: 1, x: 0, rotate: 3 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
           >
             {/* Rozet */}
             <div className="absolute top-4 right-4 bg-[#C8102E] text-white px-4 py-1 text-xs font-bold rounded-full shadow-md z-20">
@@ -79,15 +87,15 @@ export default function Hero() {
             </div>
 
             <motion.div
-              whileHover={{ rotate: 5, scale: 1.02 }} // Hover'da biraz daha yatıyor
-              transition={{ type: "spring", stiffness: 200 }}
+              whileHover={{ rotate: 5, scale: 1.02 }}
+              transition={{ type: 'spring', stiffness: 200 }}
               className="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden p-3"
             >
               <div className="bg-[#0D152E] py-4 px-5 rounded-t-2xl">
                 <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-[#C8102E]"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#C8102E]" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                  <div className="w-3 h-3 rounded-full bg-green-400" />
                   <div className="ml-6 text-sm text-white font-semibold tracking-wide">Kurumsal Panel</div>
                 </div>
               </div>
@@ -98,6 +106,7 @@ export default function Hero() {
               />
             </motion.div>
           </motion.div>
+
         </div>
       </div>
     </section>

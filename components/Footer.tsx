@@ -1,4 +1,4 @@
-'use client'; 
+'use client';  
 
 import Link from 'next/link';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
@@ -22,22 +22,26 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-bold mb-4">Ürünler</h3>
           <ul className="space-y-2">
-            <li><Link href="/products" className="hover:underline">ERP Modülleri</Link></li>
-            <li><Link href="/products" className="hover:underline">Entegrasyonlar</Link></li>
-            <li><Link href="/products" className="hover:underline">Endüstri Çözümleri</Link></li>
+            <li>
+              <Link href="/about#product-modules" className="hover:underline">
+                ERP Modülleri
+              </Link>
+            </li>
+            <li><Link href="/integrations" className="hover:underline">Entegrasyonlar</Link></li>
+            <li><Link href="/services" className="hover:underline">Hizmetlerimiz</Link></li>
             <li><Link href="/products" className="hover:underline">Mobil Uygulamalar</Link></li>
           </ul>
         </div>
 
        {/* Çözümler */}
       <div>
-    <h3 className="text-lg font-bold mb-4">Çözümler</h3>
-    <ul className="space-y-2">
-    <li><Link href="/?industry=manufacturing" className="hover:underline">Üretim</Link></li>
-    <li><Link href="/?industry=retail" className="hover:underline">Perakende & E-Ticaret</Link></li>
-    <li><Link href="/?industry=construction" className="hover:underline">İnşaat</Link></li>
-    <li><Link href="/?industry=defense" className="hover:underline">Savunma Sanayi</Link></li>
-      </ul>
+        <h3 className="text-lg font-bold mb-4">Çözümler</h3>
+        <ul className="space-y-2">
+          <li><Link href="/?industry=manufacturing" className="hover:underline">Üretim</Link></li>
+          <li><Link href="/?industry=retail" className="hover:underline">Perakende & E-Ticaret</Link></li>
+          <li><Link href="/?industry=construction" className="hover:underline">İnşaat</Link></li>
+          <li><Link href="/?industry=defense" className="hover:underline">Savunma Sanayi</Link></li>
+        </ul>
       </div>
 
         {/* İletişim + Sosyal Medya */}

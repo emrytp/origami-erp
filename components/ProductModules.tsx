@@ -14,10 +14,12 @@ export default function ProductModules() {
 
   return (
     <section
-      className="w-full py-24 relative bg-gradient-to-b from-gray-50 via-white to-gray-50
+      id="product-modules"
+      className="scroll-mt-28 w-full py-24 relative bg-gradient-to-b from-gray-50 via-white to-gray-50
                  before:content-[''] before:absolute before:inset-0
                  before:bg-[radial-gradient(60rem_40rem_at_50%_-10%,rgba(200,16,46,0.05),transparent)]
                  before:pointer-events-none"
+      aria-label="ERP Modülleri"
     >
       <div className="max-w-7xl mx-auto px-8 relative z-10">
         {/* Başlık */}
