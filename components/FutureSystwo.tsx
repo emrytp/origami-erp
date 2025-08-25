@@ -51,7 +51,7 @@ const TEXTS: Record<
     h1_highlight: 'ERP-платформа',
     h1_line2: 'рядом с вами на каждом этапе',
     paragraph:
-      'Объединяйте процессы в единой системе с Origami ERP. Гибкая архитектура адаптируется к любой отрасли и растёт вместе с бизнесом.',
+      'Объединяйте процессы в единой системе с Оригами ERP. Гибкая архитектура адаптируется к любой отрасли и растёт вместе с бизнесом.',
     ctaPrimary: 'Получить предложение',
     ctaSecondary: 'Посмотреть продукт',
     panelTitle: 'Корпоративная панель',
@@ -73,11 +73,11 @@ export default function FutureSysTwo() {
   const t = TEXTS[locale];
 
   return (
-    <section className="relative w-full bg-gradient-to-br from-white to-gray-50 overflow-hidden -mt-6 lg:-mt-8">
+    <section className="relative w-full bg-gradient-to-br from-[#F7F7F8] to-[#ECEEF2] overflow-hidden -mt-6 lg:-mt-8">
       {/* Arka plan blur */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
-        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#C8102E] opacity-10 blur-[140px] rounded-full" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#0D152E] opacity-10 blur-[120px] rounded-full" />
+        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#C8102E] opacity-5 blur-[140px] rounded-full" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#0D152E] opacity-5 blur-[120px] rounded-full" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-[clamp(0.75rem,2vw,1.25rem)] pb-[clamp(2rem,5vw,3rem)]">
@@ -90,7 +90,7 @@ export default function FutureSysTwo() {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true, amount: 0.35 }}
           >
-            <div className="absolute inset-0 w-full h-full bg-[#C8102E] opacity-20 blur-[100px] rounded-3xl -z-10" />
+            <div className="absolute inset-0 w-full h-full bg-[#C8102E] opacity-15 blur-[100px] rounded-3xl -z-10" />
             <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden p-3 rotate-[-6deg] hover:rotate-[-3deg] transition-transform duration-500">
               <div className="bg-[#0D152E] py-4 px-5 rounded-t-2xl">
                 <div className="flex items-center gap-3">

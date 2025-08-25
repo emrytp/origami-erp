@@ -59,10 +59,10 @@ const T: Record<Locale, {
     sentDesc: 'We will get back to you shortly.',
   },
   ru: {
-    mapTitle: 'Origami Software — Местоположение',
-    addressCard: { title: 'Адрес', addr1: 'Думлупынар бул., 6A/14, Бизнес‑центр Armada', addr2: 'Бештепе, Анкара 06560' },
+    mapTitle: 'Оригами ERP — Местоположение',
+    addressCard: { title: 'Адрес', addr1: 'Armada İş Merkezi Dumlupınar Bulvarı 6A/14', addr2: 'Beştepe, Ankara 06560' },
     phoneCard: { title: 'Телефон', value: '+90 (312) 222 23 20' },
-    mailCard: { title: 'E‑mail', value: 'origami@origamierp.com' },
+    mailCard: { title: 'Электронная почта', value: 'origami@origamierp.com' },
     formTitle: 'Связаться с нами',
     labels: { first: 'Имя', last: 'Фамилия', email: 'Электронная почта', message: 'Сообщение', hiddenNote: 'Конфиденциально' },
     placeholders: { first: 'Ваше имя', last: 'Ваша фамилия', email: 'primer@vashakompaniya.com', message: 'Кратко опишите вашу задачу…' },

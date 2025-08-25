@@ -84,7 +84,7 @@ const TEXTS: Record<
     heroKicker: 'Каталог продуктов',
     heroTitle: 'Мощно. Гибко. Интегрировано.',
     heroSubtitle:
-      'Линейка Origami: ERP‑ядро, мобильные приложения и кастомные интеграции — единая архитектура и качество.',
+      'Линейка Оригами: ERP‑ядро, мобильные приложения и кастомные интеграции — единая архитектура и качество.',
     demoBtn: 'Запросить демо',
     trust: {
       sec1Title: 'Корпоративная безопасность',
@@ -119,7 +119,7 @@ const PRODUCTS: Product[] = [
         features: ['iOS & Android', 'Offline sync', 'Push notifications', 'Approvals & Tasks']
       },
       ru: {
-        title: 'Origami Mobile',
+        title: 'Оригами Мобильный',
         summary:
           'Приложение iOS/Android для полевых команд и менеджмента. Push‑уведомления, офлайн, быстрые согласования.',
         features: ['iOS & Android', 'Офлайн‑синхронизация', 'Push‑уведомления', 'Согласования и задачи']
@@ -160,7 +160,7 @@ const PRODUCTS: Product[] = [
         ]
       },
       ru: {
-        title: 'Origami ERP',
+        title: 'Оригами ERP',
         summary:
           'Модульная архитектура, мощная отчётность и безлимитные интеграции. Гибкая платформа для растущих команд.',
         features: ['Модульная структура', 'Отчётность в реальном времени', 'RBAC', 'API и вебхуки', 'Web', 'OS‑agnostic']
@@ -187,7 +187,7 @@ const PRODUCTS: Product[] = [
         features: ['Membership', 'Events & class schedule', 'ERP integration', 'Role‑based access']
       },
       ru: {
-        title: 'UAO Mobile',
+        title: 'UAO Мобильный',
         summary:
           'Кастомное мобильное управление для United Aikido Organisation. Членство и события с ERP‑интеграцией.',
         features: ['Членство', 'События и расписание', 'ERP‑интеграция', 'Доступ по ролям']

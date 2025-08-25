@@ -60,13 +60,13 @@ const TEXTS: Record<
     h1_highlight: 'Умного ПО',
     h1_line2: 'для будущего вашего бизнеса',
     paragraph:
-      'Origami упрощает ERP и ускоряет процессы. Не просто софт — устойчивый партнёр по цифровой трансформации.',
+      'Оригами упрощает ERP и ускоряет процессы. Не просто софт — устойчивый партнёр по цифровой трансформации.',
     ctaPrimary: 'Получить предложение',
     ctaSecondary: 'Посмотреть продукт',
     stat1: '✅ Профессиональный сервис',
     stat2: '💡 Всегда рядом с вами',
     badge: '',
-    panelTitle: 'Origami Erp',
+    panelTitle: 'Оригами Erp',
     panelAlt: 'Интерфейс ERP панели'
   }
 };
@@ -85,11 +85,11 @@ export default function FutureSys() {
   const t = TEXTS[locale];
 
   return (
-    <section className="relative w-full bg-gradient-to-br from-white to-gray-50 overflow-hidden flex items-center">
-      {/* Arka plan blur */}
+    <section className="relative w-full bg-gradient-to-br from-[#F7F7F8] to-[#ECEEF2] overflow-hidden flex items-center">
+      {/* Arka plan blur (daha yumuşak) */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
-        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#C8102E] opacity-10 blur-[140px] rounded-full" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#0D152E] opacity-10 blur-[120px] rounded-full" />
+        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#C8102E] opacity-5 blur-[160px] rounded-full" />
+        <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-[#0D152E] opacity-5 blur-[140px] rounded-full" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-[clamp(4rem,7vw,6rem)] pb-[clamp(1.25rem,3.5vw,2.5rem)]">
@@ -143,7 +143,7 @@ export default function FutureSys() {
             animate={{ opacity: 1, x: 0, rotate: 3 }}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
           >
-            <div className="absolute inset-0 w-full h-full bg-[#C8102E] opacity-20 blur-[100px] rounded-3xl -z-10" />
+            <div className="absolute inset-0 w-full h-full bg-[#C8102E] opacity-15 blur-[90px] rounded-3xl -z-10" />
             <motion.div
               whileHover={{ rotate: 5, scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 200 }}
