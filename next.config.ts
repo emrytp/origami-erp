@@ -1,20 +1,10 @@
-// next.config.ts
-import createNextIntlPlugin from 'next-intl/plugin';
-import type {NextConfig} from 'next';
-
-// next-intl plugin (URL değiştirmeden cookie ile i18n)
-// src/i18n/request.ts dosyanı otomatik kullanır
-const withNextIntl = createNextIntlPlugin();
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  images: {
-    unoptimized: true
-  },
-  typescript: {
-    // ignoreBuildErrors: true,
-  },
-  // output: "export", // statik export kullanacaksan açık bırakabilirsin (routing'siz i18n ile uyumlu)
+  output: 'export',             // static export
+  images: { unoptimized: true },// <Image> için
+  trailingSlash: true,          // /tr/ gibi son slash’lı yollar
+  eslint: { ignoreDuringBuilds: true }
 };
 
-// eslint-disable-next-line import/no-default-export
-export default withNextIntl(nextConfig);
+export default nextConfig;

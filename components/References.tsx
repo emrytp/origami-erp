@@ -33,8 +33,8 @@ const TEXTS: Record<
     alt: (i) => `Reference ${i + 1}`
   },
   ru: {
-    eyebrow: 'Наши надёжные партнёры',
-    heading: 'Наши клиенты',
+    eyebrow: '',
+    heading: 'Наши референсы',
     alt: (i) => `Референс ${i + 1}`
   }
 };

@@ -11,19 +11,19 @@ function getCookie(name: string) {
 
 const TEXTS: Record<Locale, {title: string; subtitle1: string; subtitle2: string}> = {
   tr: {
-    title: 'Origami Yazılım İle Birlikte Büyüyen İşletmeler',
+    title: 'Origami ERP İle Birlikte Büyüyen İşletmeler',
     subtitle1: 'Yenilikçi çözümlerimizle teknolojiye uyum sağlamak artık çok daha kolay.',
     subtitle2:
       'Origami Yazılım olarak, hızlı ve esnek bir geliştirme süreciyle iş süreçlerinizi daha verimli ve etkili hale getiriyoruz.'
   },
   en: {
-    title: 'Businesses Growing with Origami Software',
+    title: 'Businesses Growing with Origami ERP',
     subtitle1: 'With our innovative solutions, adapting to technology is now much easier.',
     subtitle2:
       'At Origami Software, we make your processes more efficient and effective with a fast and flexible development cycle.'
   },
   ru: {
-    title: 'Бизнес, растущий вместе с Origami Software',
+    title: 'Бизнес, растущий вместе с Оригами ERP',
     subtitle1: 'С нашими инновационными решениями адаптация к технологиям стала проще.',
     subtitle2:
       'Мы делаем ваши бизнес‑процессы более эффективными благодаря быстрому и гибкому циклу разработки.'

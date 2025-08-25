@@ -93,7 +93,7 @@ export default function Header() {
     },
     ru: {
       home: 'Главная',
-      about: 'О нас',
+      about: 'О компании',
       products: 'Продукты',
       services: 'Услуги',
       integrations: 'Интеграции',
