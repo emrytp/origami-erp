@@ -24,9 +24,12 @@ const sizeMap = {
   lg: 'w-80 h-96'
 };
 
-const GlowCard: React.FC<GlowCardProps> = ({ 
-  children, 
-  className = '', 
+// TS: CSS custom variables için geniş tip
+type CSSWithVars = React.CSSProperties & Record<string, string | number | undefined>;
+
+const GlowCard: React.FC<GlowCardProps> = ({
+  children,
+  className = '',
   glowColor = 'blue',
   size = 'md',
   width,
@@ -39,7 +42,7 @@ const GlowCard: React.FC<GlowCardProps> = ({
   useEffect(() => {
     const syncPointer = (e: PointerEvent) => {
       const { clientX: x, clientY: y } = e;
-      
+
       if (cardRef.current) {
         cardRef.current.style.setProperty('--x', x.toFixed(2));
         cardRef.current.style.setProperty('--xp', (x / window.innerWidth).toFixed(2));
@@ -62,19 +65,19 @@ const GlowCard: React.FC<GlowCardProps> = ({
     return sizeMap[size];
   };
 
-  const getInlineStyles = () => {
-    const baseStyles = {
-      '--base': base,
-      '--spread': spread,
-      '--radius': '14',
-      '--border': '3',
-      '--backdrop': 'hsl(0 0% 60% / 0.12)',
-      '--backup-border': 'var(--backdrop)',
-      '--size': '200',
-      '--outer': '1',
-      '--border-size': 'calc(var(--border, 2) * 1px)',
-      '--spotlight-size': 'calc(var(--size, 150) * 1px)',
-      '--hue': 'calc(var(--base) + (var(--xp, 0) * var(--spread, 0)))',
+  const getInlineStyles = (): CSSWithVars => {
+    const baseStyles: CSSWithVars = {
+      ['--base']: base,
+      ['--spread']: spread,
+      ['--radius']: '14',
+      ['--border']: '3',
+      ['--backdrop']: 'hsl(0 0% 60% / 0.12)',
+      ['--backup-border']: 'var(--backdrop)',
+      ['--size']: '200',
+      ['--outer']: '1',
+      ['--border-size']: 'calc(var(--border, 2) * 1px)',
+      ['--spotlight-size']: 'calc(var(--size, 150) * 1px)',
+      ['--hue']: 'calc(var(--base) + (var(--xp, 0) * var(--spread, 0)))',
       backgroundImage: `radial-gradient(
         var(--spotlight-size) var(--spotlight-size) at
         calc(var(--x, 0) * 1px)
@@ -86,8 +89,8 @@ const GlowCard: React.FC<GlowCardProps> = ({
       backgroundPosition: '50% 50%',
       backgroundAttachment: 'fixed',
       border: 'var(--border-size) solid var(--backup-border)',
-      position: 'relative' as const,
-      touchAction: 'none' as const,
+      position: 'relative',
+      touchAction: 'none'
     };
 
     // Add width and height if provided
@@ -185,4 +188,4 @@ const GlowCard: React.FC<GlowCardProps> = ({
   );
 };
 
-export { GlowCard }
+export { GlowCard };
