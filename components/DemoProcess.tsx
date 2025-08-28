@@ -32,34 +32,10 @@ const TEXTS: Record<Locale, Copy> = {
     sub: 'ERP sistemine geçiş sürecinizin sorunsuz, verimli ve hedeflerinize tam uyumlu olması için yapılandırılmış bir yaklaşım.',
     cta: 'Demo Yolculuğuna Başla',
     steps: [
-      {
-        number: '01',
-        title: 'İhtiyaç Analizi',
-        description: 'İşletmenizin gereksinimlerini, mevcut sistemlerini ve operasyonel zorluklarını detaylı şekilde analiz ediyoruz.',
-        icon: 'ri-search-eye-line',
-        color: 'from-[#C8102E] to-[#A00D26]',
-      },
-      {
-        number: '02',
-        title: 'Özel Sunum',
-        description: 'Sektörünüze ve kullanım senaryonuza özel hazırlanmış bir demoyu adım adım sunuyoruz.',
-        icon: 'ri-presentation-line',
-        color: 'from-[#A00D26] to-[#8B0B23]',
-      },
-      {
-        number: '03',
-        title: 'Teknik Uyum',
-        description: 'Teknik ekibimiz entegrasyon ihtiyaçlarını, veri aktarımı ve sistem mimarisi detaylarını inceler.',
-        icon: 'ri-settings-4-line',
-        color: 'from-[#8B0B23] to-[#760920]',
-      },
-      {
-        number: '04',
-        title: 'Canlı Test',
-        description: 'Gerçek verilerinizle, güvenli bir demo ortamında sistemi bizzat deneyimleyin.',
-        icon: 'ri-play-circle-line',
-        color: 'from-[#760920] to-[#61071D]',
-      },
+      { number: '01', title: 'İhtiyaç Analizi', description: 'İşletmenizin gereksinimlerini, mevcut sistemlerini ve operasyonel zorluklarını detaylı şekilde analiz ediyoruz.', icon: 'ri-search-eye-line', color: 'from-[#C8102E] to-[#A00D26]' },
+      { number: '02', title: 'Özel Sunum', description: 'Sektörünüze ve kullanım senaryonuza özel hazırlanmış bir demoyu adım adım sunuyoruz.', icon: 'ri-presentation-line', color: 'from-[#A00D26] to-[#8B0B23]' },
+      { number: '03', title: 'Teknik Uyum', description: 'Teknik ekibimiz entegrasyon ihtiyaçlarını, veri aktarımı ve sistem mimarisi detaylarını inceler.', icon: 'ri-settings-4-line', color: 'from-[#8B0B23] to-[#760920]' },
+      { number: '04', title: 'Canlı Test', description: 'Gerçek verilerinizle, güvenli bir demo ortamında sistemi bizzat deneyimleyin.', icon: 'ri-play-circle-line', color: 'from-[#760920] to-[#61071D]' },
     ],
   },
   en: {
@@ -67,34 +43,10 @@ const TEXTS: Record<Locale, Copy> = {
     sub: 'A structured approach to ensure your ERP transition is smooth, efficient and aligned with your goals.',
     cta: 'Start the Demo Journey',
     steps: [
-      {
-        number: '01',
-        title: 'Needs Analysis',
-        description: 'We analyze your business requirements, current systems and operational challenges in detail.',
-        icon: 'ri-search-eye-line',
-        color: 'from-[#C8102E] to-[#A00D26]',
-      },
-      {
-        number: '02',
-        title: 'Custom Presentation',
-        description: 'We deliver a tailored demo prepared for your industry and use case, step by step.',
-        icon: 'ri-presentation-line',
-        color: 'from-[#A00D26] to-[#8B0B23]',
-      },
-      {
-        number: '03',
-        title: 'Technical Alignment',
-        description: 'Our team examines integration needs, data migration and system architecture details.',
-        icon: 'ri-settings-4-line',
-        color: 'from-[#8B0B23] to-[#760920]',
-      },
-      {
-        number: '04',
-        title: 'Live Test',
-        description: 'Experience the system yourself in a secure demo environment with your real data.',
-        icon: 'ri-play-circle-line',
-        color: 'from-[#760920] to-[#61071D]',
-      },
+      { number: '01', title: 'Needs Analysis', description: 'We analyze your business requirements, current systems and operational challenges in detail.', icon: 'ri-search-eye-line', color: 'from-[#C8102E] to-[#A00D26]' },
+      { number: '02', title: 'Custom Presentation', description: 'We deliver a tailored demo prepared for your industry and use case, step by step.', icon: 'ri-presentation-line', color: 'from-[#A00D26] to-[#8B0B23]' },
+      { number: '03', title: 'Technical Alignment', description: 'Our team examines integration needs, data migration and system architecture details.', icon: 'ri-settings-4-line', color: 'from-[#8B0B23] to-[#760920]' },
+      { number: '04', title: 'Live Test', description: 'Experience the system yourself in a secure demo environment with your real data.', icon: 'ri-play-circle-line', color: 'from-[#760920] to-[#61071D]' },
     ],
   },
   ru: {
@@ -102,34 +54,10 @@ const TEXTS: Record<Locale, Copy> = {
     sub: 'Структурированный подход для плавного, эффективного и полностью соответствующего целям перехода на ERP.',
     cta: 'Начать демо-путь',
     steps: [
-      {
-        number: '01',
-        title: 'Анализ потребностей',
-        description: 'Мы подробно анализируем требования вашего бизнеса, существующие системы и операционные сложности.',
-        icon: 'ri-search-eye-line',
-        color: 'from-[#C8102E] to-[#A00D26]',
-      },
-      {
-        number: '02',
-        title: 'Индивидуальная презентация',
-        description: 'Мы пошагово демонстрируем подготовленное специально для вашей отрасли решение.',
-        icon: 'ri-presentation-line',
-        color: 'from-[#A00D26] to-[#8B0B23]',
-      },
-      {
-        number: '03',
-        title: 'Техническое согласование',
-        description: 'Наша команда изучает интеграционные потребности, перенос данных и архитектуру системы.',
-        icon: 'ri-settings-4-line',
-        color: 'from-[#8B0B23] to-[#760920]',
-      },
-      {
-        number: '04',
-        title: 'Живое тестирование',
-        description: 'Испытайте систему на собственных данных в безопасной демо-среде.',
-        icon: 'ri-play-circle-line',
-        color: 'from-[#760920] to-[#61071D]',
-      },
+      { number: '01', title: 'Анализ потребностей', description: 'Мы подробно анализируем требования вашего бизнеса, существующие системы и операционные сложности.', icon: 'ri-search-eye-line', color: 'from-[#C8102E] to-[#A00D26]' },
+      { number: '02', title: 'Индивидуальная презентация', description: 'Мы пошагово демонстрируем подготовленное специально для вашей отрасли решение.', icon: 'ri-presentation-line', color: 'from-[#A00D26] to-[#8B0B23]' },
+      { number: '03', title: 'Техническое согласование', description: 'Наша команда изучает интеграционные потребности, перенос данных и архитектуру системы.', icon: 'ri-settings-4-line', color: 'from-[#8B0B23] to-[#760920]' },
+      { number: '04', title: 'Живое тестирование', description: 'Испытайте систему на собственных данных в безопасной демо-среде.', icon: 'ri-play-circle-line', color: 'from-[#760920] to-[#61071D]' },
     ],
   },
 };
@@ -161,15 +89,28 @@ export default function DemoProcess() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {copy.steps.map((step, index) => (
-            <div key={index} className="group relative">
+            <div key={index} className="group relative h-full">
               {index < copy.steps.length - 1 && (
-                <div className="hidden lg:block absolute top-16 left-full w-8 h-0.5 bg-gradient-to-r from-[#C8102E] to-transparent z-10"></div>
+                <div className="hidden lg:block absolute top-16 left-full w-8 h-0.5 bg-gradient-to-r from-[#C8102E] to-transparent z-10" />
               )}
 
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all duration-500 hover:-translate-y-2">
+              {/* DIŞ GLOW: kutunun çevresi parlasın */}
+              <span
+                className="pointer-events-none absolute -inset-6 rounded-[30px] -z-10
+                           opacity-0 group-hover:opacity-60
+                           blur-3xl transition-opacity duration-500
+                           bg-[radial-gradient(80%_80%_at_50%_50%,rgba(200,16,46,0.35),rgba(160,13,38,0.0))]"
+              />
+
+              {/* Kutu */}
+              <div
+                className="h-full flex flex-col justify-between
+                           bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl
+                           transition-transform duration-500 hover:scale-105 hover:bg-white/10"
+              >
                 <div className="text-center">
                   <div
-                    className={`w-16 h-16 mx-auto mb-6 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+                    className={`w-16 h-16 mx-auto mb-6 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center`}
                   >
                     <i className={`${step.icon} text-2xl text-white`} />
                   </div>
@@ -200,7 +141,8 @@ export default function DemoProcess() {
                          hover:bg-gradient-to-l hover:from-[#C8102E] hover:to-[#A00D26] 
                          shadow-lg hover:shadow-red-900/30 
                          text-white transition-all duration-300 
-                         transform hover:-translate-y-1 hover:scale-[1.02]">
+                         transform hover:-translate-y-1 hover:scale-[1.02]"
+            >
               {copy.cta}
             </button>
           </Link>

@@ -2,7 +2,6 @@
 
 import Header from '../../components/Header';
 import AboutUs from '../../components/AboutUs';
-import ProductModules from '../../components/ProductModules';
 import DemoProcess from "@/components/DemoProcess";
 import Footer from '../../components/Footer';
 
@@ -11,7 +10,6 @@ export default function AboutPage() {
     <>
       <Header />
       <AboutUs />
-      <ProductModules />
       <DemoProcess />
       <Footer />
     </>

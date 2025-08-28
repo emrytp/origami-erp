@@ -50,8 +50,8 @@ const TEXTS: Record<
     hero: {
       imageAlt: 'Origami ekibi',
       kicker: 'HAKKIMIZDA',
-      titleBefore: 'İşinizi ileri taşıyan',
-      titleHighlight: 'yazılım ekibi',
+      titleBefore: 'İşinizi İleri Taşıyan',
+      titleHighlight: 'Yazılım Ekibi',
       subtitle:
         'Origami olarak, sade ama güçlü ürünler geliştiriyoruz. İş süreçlerini hızlandıran, verimliliği artıran ve büyümeyi destekleyen çözümler üretiyoruz.',
       ctaDemo: 'İletişime Geç',
@@ -61,7 +61,7 @@ const TEXTS: Record<
     story: {
       title: 'Hikayemiz',
       text:
-        'Kurulduğumuz günden bu yana hedefimiz; karmaşık süreçleri sadeleştirip erişilebilir ve esnek yazılımlar sunmak oldu. Farklı sektörlerde edindiğimiz deneyimi tek bir güçlü platformda birleştirdik.'
+        'Kurulduğumuz günden bu yana hedefimiz; karmaşık süreçleri sadeleştirip erişilebilir ve esnek yazılımlar sunmak oldu. Farklı sektörlerde edindiğimiz deneyimi tek bir güçlü platformda birleştirdik. İş ortaklarımızın ihtiyaçlarını anlamak ve onlara en uygun çözümleri sunmak için sürekli gelişiyor, teknolojiyi yakından takip ediyoruz. Bugün, küçük işletmelerden büyük kurumlara kadar her ölçekte firmaya dijital dönüşüm yolculuklarında eşlik ediyoruz.'
     },
     mv: {
       kicker: 'DEĞERLERİMİZ',
@@ -92,8 +92,8 @@ const TEXTS: Record<
     hero: {
       imageAlt: 'Origami team',
       kicker: 'ABOUT US',
-      titleBefore: 'A software team that',
-      titleHighlight: 'moves your business forward',
+      titleBefore: 'A Software Team That',
+      titleHighlight: 'Moves Your Business Forward',
       subtitle:
         'At Origami, we build simple yet powerful products that speed up operations, boost efficiency and support growth.',
       ctaDemo: 'Contact Us',
@@ -103,7 +103,7 @@ const TEXTS: Record<
     story: {
       title: 'Our Story',
       text:
-        'Since day one, our goal has been to simplify complex workflows and deliver accessible, flexible software. We combined experience from many industries into one robust platform.'
+        'Since day one, our goal has been to simplify complex workflows and deliver accessible, flexible software. We combined experience from many industries into one robust platform. We continuously evolve to understand our partners’ needs and provide the most suitable solutions, staying up to date with technology. Today, we support businesses of all sizes on their digital transformation journey.'
     },
     mv: {
       kicker: 'OUR VALUES',
@@ -124,8 +124,8 @@ const TEXTS: Record<
           'Become a trusted enterprise software brand—regional leader with a global footprint.',
         bullets: {
           b1: 'Continuous innovation',
-          b2: 'Customer‑driven development',
-          b3: 'Long‑term partnerships'
+          b2: 'Customer-driven development',
+          b3: 'Long-term partnerships'
         }
       }
     }
@@ -145,7 +145,7 @@ const TEXTS: Record<
     story: {
       title: 'Наша история',
       text:
-        'С самого начала наша цель — упростить сложные процессы и предоставить доступные, гибкие решения. Мы объединили опыт из разных отраслей в одной платформе.'
+        'С самого начала наша цель — упростить сложные процессы и предоставить доступные, гибкие решения. Мы объединили опыт из разных отраслей в одной платформе. Мы постоянно развиваемся, чтобы понимать потребности наших партнёров и предлагать им наиболее подходящие решения, следим за новыми технологиями. Сегодня мы сопровождаем компании любого масштаба в их пути цифровой трансформации.'
     },
     mv: {
       kicker: 'НАШИ ЦЕННОСТИ',
@@ -177,7 +177,6 @@ const TEXTS: Record<
 export default function AboutPage() {
   const [locale, setLocale] = useState<Locale>('tr');
 
-  // Cookie’dan oku + Header’ın dispatch ettiği 'locale-change'i dinle
   useEffect(() => {
     const read = () => setLocale(((getCookie('NEXT_LOCALE') as Locale) || 'tr'));
     read();
@@ -189,10 +188,10 @@ export default function AboutPage() {
   const t = TEXTS[locale];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white font-sans">
       <Header />
 
-      {/* HERO (full screen) */}
+      {/* HERO */}
       <section className="relative w-full h-screen flex items-center justify-center text-white overflow-hidden">
         <Image
           src="/team.jpg"
@@ -246,7 +245,7 @@ export default function AboutPage() {
           {t.story.title}
           <span className="absolute left-1/2 -bottom-2 w-16 h-[3px] bg-gradient-to-r from-[#C8102E] to-[#FFB3BF] -translate-x-1/2 rounded-full" />
         </h2>
-        <p className="mt-8 text-gray-700 leading-loose text-lg font-light">
+        <p className="mt-8 text-gray-700 leading-relaxed text-lg font-normal">
           {t.story.text}
         </p>
       </section>
@@ -289,7 +288,7 @@ export default function AboutPage() {
             </div>
 
             {/* Vizyon */}
-            <div className="group relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 hover:bg白/10 transition">
+            <div className="group relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 hover:bg-white/10 transition">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#6BA5FF] to-[#3B6BFF] grid place-items-center shadow-lg">
                   <span className="text-white text-xl">🚀</span>
