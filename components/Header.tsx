@@ -114,7 +114,7 @@ export default function Header() {
                 alt="Origami Logo"
                 width={256}
                 height={256}
-                className="w-auto h-11 sm:h-12 lg:h-[52px]"
+                className="w-auto h-11 sm:h-12 lg:h-[52px]"  // width auto -> oran korunur
                 sizes="(max-width: 640px) 44px, (max-width: 1024px) 48px, 52px"
                 priority
               />
@@ -156,7 +156,9 @@ export default function Header() {
                 alt={FLAGS[locale].alt}
                 width={28}
                 height={20}
-                className="rounded-[2px] ring-1 ring-gray-200"
+                className="h-5 w-auto rounded-[2px] ring-1 ring-gray-200" // 👈 oran garanti
+                sizes="28px"
+                decoding="async"
               />
               <FiChevronDown
                 className={`w-5 h-5 text-[#0D152E]/90 hover:text-[#C8102E] transition-transform duration-300 ${isLangOpen ? 'rotate-180' : ''}`}
@@ -169,15 +171,15 @@ export default function Header() {
                 className="absolute right-0 top-[110%] w-48 bg-white border border-gray-200 rounded-lg shadow-lg p-2 flex flex-col space-y-1"
               >
                 <button onClick={() => changeLang('tr')} className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100">
-                  <Image src="/flags/turkey.png" alt="Türkçe" width={28} height={20} className="rounded-[2px] ring-1 ring-gray-200" />
+                  <Image src="/flags/turkey.png" alt="Türkçe" width={28} height={20} className="h-5 w-auto rounded-[2px] ring-1 ring-gray-200" sizes="28px" decoding="async" />
                   Türkçe
                 </button>
                 <button onClick={() => changeLang('en')} className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100">
-                  <Image src="/flags/united-kingdom.png" alt="English" width={28} height={20} className="rounded-[2px] ring-1 ring-gray-200" />
+                  <Image src="/flags/united-kingdom.png" alt="English" width={28} height={20} className="h-5 w-auto rounded-[2px] ring-1 ring-gray-200" sizes="28px" decoding="async" />
                   English
                 </button>
                 <button onClick={() => changeLang('ru')} className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100">
-                  <Image src="/flags/russia.png" alt="Русский" width={28} height={20} className="rounded-[2px] ring-1 ring-gray-200" />
+                  <Image src="/flags/russia.png" alt="Русский" width={28} height={20} className="h-5 w-auto rounded-[2px] ring-1 ring-gray-200" sizes="28px" decoding="async" />
                   Русский
                 </button>
               </div>

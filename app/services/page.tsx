@@ -1,6 +1,6 @@
 'use client';
 
-import {useEffect, useMemo, useState} from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/Header';
@@ -13,7 +13,7 @@ import {
   FiSmartphone,
   FiBarChart2
 } from 'react-icons/fi';
-import type {IconType} from 'react-icons';
+import type { IconType } from 'react-icons';
 
 type Locale = 'tr' | 'en' | 'ru';
 
@@ -37,17 +37,17 @@ const SERVICES: Service[] = [
       tr: {
         title: 'Özel Yazılım Geliştirme',
         desc: 'İhtiyacınıza %100 uyumlu, ölçeklenebilir ve güvenli kurumsal uygulamalar.',
-        bullets: ['Modüler mimari', 'Bulut + On‑prem']
+        bullets: ['Modüler mimari', 'Bulut + On-prem']
       },
       en: {
         title: 'Custom Software Development',
         desc: 'Enterprise apps tailored 1:1 to your needs—scalable and secure.',
-        bullets: ['Modular architecture', 'Cloud + On‑prem']
+        bullets: ['Modular architecture', 'Cloud + On-prem']
       },
       ru: {
         title: 'Индивидуальная разработка ПО',
         desc: 'Корпоративные приложения под ваши задачи: масштабируемые и безопасные.',
-        bullets: ['Модульная архитектура', 'Облако + On‑prem']
+        bullets: ['Модульная архитектура', 'Облако + On-prem']
       }
     }
   },
@@ -62,8 +62,8 @@ const SERVICES: Service[] = [
       },
       en: {
         title: 'Project Management & Delivery',
-        desc: 'End‑to‑end from analysis to go‑live, incl. setup and training.',
-        bullets: ['Agile', 'KPI‑driven progress', 'Risk & scope control']
+        desc: 'End-to-end from analysis to go-live, incl. setup and training.',
+        bullets: ['Agile', 'KPI-driven progress', 'Risk & scope control']
       },
       ru: {
         title: 'Управление проектами и внедрение',
@@ -79,16 +79,16 @@ const SERVICES: Service[] = [
       tr: {
         title: 'Özelleştirme & Entegrasyon',
         desc: 'Mevcut sistemlerinize sorunsuz bağlanan API tabanlı entegrasyonlar.',
-        bullets: ['ERP/Muhasebe', 'E‑ticaret & pazar yerleri', 'e‑Belge & lojistik']
+        bullets: ['ERP/Muhasebe', 'E-ticaret & pazar yerleri', 'e-Belge & lojistik']
       },
       en: {
         title: 'Customization & Integration',
-        desc: 'API‑first integrations that plug into your current stack.',
-        bullets: ['ERP/Accounting', 'E‑commerce & marketplaces', 'e‑Docs & logistics']
+        desc: 'API-first integrations that plug into your current stack.',
+        bullets: ['ERP/Accounting', 'E-commerce & marketplaces', 'e-Docs & logistics']
       },
       ru: {
         title: 'Кастомизация и интеграции',
-        desc: 'API‑интеграции с вашей текущей системой без боли.',
+        desc: 'API-интеграции с вашей текущей системой без боли.',
         bullets: ['ERP/бухучёт', 'э-Коммерция и маркетплейсы', 'Электронные документы и логистика']
       }
     }
@@ -103,13 +103,13 @@ const SERVICES: Service[] = [
         bullets: ['7/24 izleme', 'Sürüm planı', 'Eğitim & dokümantasyon']
       },
       en: {
-        title: 'Post‑Go‑Live Support',
+        title: 'Post-Go-Live Support',
         desc: 'SLA maintenance, release planning and continuous monitoring.',
         bullets: ['24/7 monitoring', 'Release roadmap', 'Training & docs']
       },
       ru: {
         title: 'Поддержка после запуска',
-        desc: 'SLA‑сопровождение, план релизов и постоянный мониторинг.',
+        desc: 'SLA-сопровождение, план релизов и постоянный мониторинг.',
         bullets: ['Мониторинг 24/7', 'Дорожная карта релизов', 'Обучение и документация']
       }
     }
@@ -126,11 +126,11 @@ const SERVICES: Service[] = [
       en: {
         title: 'Mobile Apps',
         desc: 'Run your ERP processes on iOS/Android.',
-        bullets: ['Real‑time field input', 'Mobile tasks & approvals', 'Instant sync with team & clients']
+        bullets: ['Real-time field input', 'Mobile tasks & approvals', 'Instant sync with team & clients']
       },
       ru: {
         title: 'Мобильные приложения',
-        desc: 'ERP‑процессы на iOS/Android.',
+        desc: 'ERP-процессы на iOS/Android.',
         bullets: ['Данные с поля в реальном времени', 'Мобильные задачи/согласования', 'Мгновенная синхронизация']
       }
     }
@@ -146,8 +146,8 @@ const SERVICES: Service[] = [
       },
       en: {
         title: 'Advisory & Analytics',
-        desc: 'Data‑driven decisions, reporting and dashboards.',
-        bullets: ['Real‑time performance', 'Always‑fresh reports']
+        desc: 'Data-driven decisions, reporting and dashboards.',
+        bullets: ['Real-time performance', 'Always-fresh reports']
       },
       ru: {
         title: 'Консалтинг и аналитика',
@@ -193,7 +193,7 @@ const COPY: Record<
     faqs: [
       {
         q: 'Origami ERP mevcut sistemlerimle uyumlu mu?',
-        a: 'Evet. API’ler, webhooks ve hazır konektörlerle muhasebe, e‑ticaret, depo, CRM, üretim ve lojistik sistemleriyle sorunsuz çalışır.'
+        a: 'Evet. API’ler, webhooks ve hazır konektörlerle muhasebe, e-ticaret, depo, CRM, üretim ve lojistik sistemleriyle sorunsuz çalışır.'
       },
       {
         q: 'Kurulum ve canlıya geçiş ne kadar sürer?',
@@ -226,11 +226,11 @@ const COPY: Record<
     faqs: [
       {
         q: 'Is Origami ERP compatible with my existing systems?',
-        a: 'Yes. With APIs, webhooks and ready connectors it works seamlessly with accounting, e‑commerce, WMS, CRM, manufacturing and logistics.'
+        a: 'Yes. With APIs, webhooks and ready connectors it works seamlessly with accounting, e-commerce, WMS, CRM, manufacturing and logistics.'
       },
       {
         q: 'How long does implementation take?',
-        a: 'Based on company needs: Discovery → Setup → Data migration → Training → Go‑live.'
+        a: 'Based on company needs: Discovery → Setup → Data migration → Training → Go-live.'
       },
       {
         q: 'Do you customize?',
@@ -259,7 +259,7 @@ const COPY: Record<
     faqs: [
       {
         q: 'Совместима ли Origami ERP с моими системами?',
-        a: 'Да. Через API, webhooks и готовые коннекторы — с бухучётом, e‑commerce, складом, CRM, производством и логистикой.'
+        a: 'Да. Через API, webhooks и готовые коннекторы — с бухучётом, e-commerce, складом, CRM, производством и логистикой.'
       },
       {
         q: 'Сколько длится внедрение?',
@@ -292,7 +292,7 @@ export default function ServicesPage() {
 
   // Seçili dile göre hizmet metinlerini hazırla
   const localizedServices = useMemo(() => {
-    return SERVICES.map(s => ({
+    return SERVICES.map((s) => ({
       Icon: s.Icon,
       color: s.color,
       ...s.i18n[locale]
@@ -300,6 +300,10 @@ export default function ServicesPage() {
   }, [locale]);
 
   const [open, setOpen] = useState<number | null>(0);
+
+  // SSS için eyebrow metni (referans stili)
+  const faqEyebrow =
+    locale === 'tr' ? 'Bilgi Merkezi' : locale === 'en' ? 'Help Center' : 'Центр помощи';
 
   return (
     <div className="min-h-screen bg-white">
@@ -347,20 +351,31 @@ export default function ServicesPage() {
         before:pointer-events-none"
       >
         <div className="max-w-7xl mx-auto px-8 relative z-10">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl lg:text-5xl font-serif font-extrabold text-[#0D152E]">
-              {copy.allServices}
+          {/* Başlık — Referans stili (eyebrow + underline) */}
+          <div className="mb-16 text-center">
+            <div className="text-[11px] tracking-[6px] text-[#C8102E] uppercase font-semibold">
+              {copy.heroKicker}
+            </div>
+            <h2 className="mt-1 text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0D152E] font-[Poppins]">
+              <span className="relative inline-block">
+                {copy.allServices}
+                <span className="absolute bottom-[-8px] left-1/2 -translate-x-1/2 h-[3px] w-16 bg-[#C8102E] rounded-full" />
+              </span>
             </h2>
-            <p className="mt-4 text-gray-600 text-lg">{copy.allServicesSub}</p>
+            <p className="mt-5 text-[clamp(15px,1.4vw,20px)] text-gray-600 max-w-3xl mx-auto leading-relaxed [text-wrap:balance]">
+              {copy.allServicesSub}
+            </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {localizedServices.map(({Icon, title, desc, bullets, color}, i) => (
+            {localizedServices.map(({ Icon, title, desc, bullets, color }, i) => (
               <div
                 key={i}
                 className="group relative rounded-3xl border border-gray-100/70 bg-white/80 backdrop-blur-sm p-7 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all"
               >
-                <div className={`w-14 h-14 rounded-2xl grid place-items-center bg-gradient-to-br ${color} text-white shadow-md`}>
+                <div
+                  className={`w-14 h-14 rounded-2xl grid place-items-center bg-gradient-to-br ${color} text-white shadow-md`}
+                >
                   <Icon className="text-2xl" />
                 </div>
                 <h3 className="mt-5 text-xl font-bold text-[#0D152E] group-hover:text-[#C8102E] transition-colors">
@@ -408,11 +423,19 @@ export default function ServicesPage() {
       {/* SSS */}
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-8">
-          <div className="text-center mb-10">
-            <p className="text-[#0D152E] text-4xl lg:text-5xl font-serif font-extrabold tracking-wide drop-shadow-sm">
-              {copy.faqTitle}
-            </p>
+          {/* Başlık — Referans stili (eyebrow + underline) */}
+          <div className="mb-12 text-center">
+            <div className="text-[11px] tracking-[6px] text-[#C8102E] uppercase font-semibold">
+              {faqEyebrow}
+            </div>
+            <h2 className="mt-1 text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0D152E] font-[Poppins]">
+              <span className="relative inline-block">
+                {copy.faqTitle}
+                <span className="absolute bottom-[-8px] left-1/2 -translate-x-1/2 h-[3px] w-16 bg-[#C8102E] rounded-full" />
+              </span>
+            </h2>
           </div>
+
           <div className="space-y-4">
             {copy.faqs.map((f, i) => (
               <div key={i} className="rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
@@ -423,7 +446,9 @@ export default function ServicesPage() {
                   <span className="font-semibold text-[#0D152E]">{f.q}</span>
                   <i className={`ri-add-line transition-transform ${open === i ? 'rotate-45' : ''}`} />
                 </button>
-                {open === i && <div className="px-6 pb-6 -mt-2 text-gray-600 leading-relaxed">{f.a}</div>}
+                {open === i && (
+                  <div className="px-6 pb-6 -mt-2 text-gray-600 leading-relaxed">{f.a}</div>
+                )}
               </div>
             ))}
           </div>
@@ -434,3 +459,4 @@ export default function ServicesPage() {
     </div>
   );
 }
+2

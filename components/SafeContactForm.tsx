@@ -3,15 +3,10 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 
 type Props = {
-  formspreeId: string;        // Formspree form id (örn: "xyzqwdab")
-  minimalDelayMs?: number;    // time-trap eşiği (default 3000ms)
+  formspreeId: string;        
+  minimalDelayMs?: number;   
   className?: string;
 };
-
-const SPAM_WORDS = [
-  'viagra','loan','casino','crypto airdrop','porn','xxx','sex',
-  'visit my site','bit.ly','tinyurl.com'
-];
 
 export default function SafeContactForm({
   formspreeId,
@@ -26,20 +21,12 @@ export default function SafeContactForm({
   // Honeypot alan adı
   const honeyName = useMemo(() => 'website', []);
 
-  // Basit içerik filtresi
-  const looksSpammy = (text: string) => {
-    const lc = text.toLowerCase();
-    const links = (lc.match(/https?:\/\//g) || []).length;
-    if (links > 2) return 'Çok fazla link tespit edildi.';
-    if (SPAM_WORDS.some(w => lc.includes(w))) return 'Mesaj içeriği uygun değil.';
-    return null;
-  };
-
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     setError(null);
 
-    // honeypot kontrolü
     const form = e.currentTarget;
+
+    // honeypot kontrolü
     const hp = (form.elements.namedItem(honeyName) as HTMLInputElement | null)?.value?.trim();
     if (hp) {
       e.preventDefault();
@@ -51,17 +38,7 @@ export default function SafeContactForm({
     const elapsed = Date.now() - startedAt.current;
     if (elapsed < minimalDelayMs) {
       e.preventDefault();
-      setError('Gönderim çok hızlı yapıldı. Lütfen tekrar deneyin.');
-      return;
-    }
-
-    // içerik filtresi
-    const msgEl = form.elements.namedItem('message') as HTMLTextAreaElement | null;
-    const message = msgEl?.value || '';
-    const spamMsg = looksSpammy(message);
-    if (spamMsg) {
-      e.preventDefault();
-      setError(spamMsg);
+      setError('Lütfen tekrar deneyin.');
       return;
     }
 
@@ -108,7 +85,7 @@ export default function SafeContactForm({
           id="firstName" name="firstName" type="text" required
           maxLength={60} autoComplete="off"
           className="rounded-md border bg-transparent p-2"
-          pattern="^[A-Za-zÇĞİÖŞÜçğıöşü\s\-'.]{2,}$"
+          pattern="^[A-Za-zÇĞİÖŞÜçğıöşü\\s\\-'.]{2,}$"
         />
       </div>
 
@@ -118,7 +95,7 @@ export default function SafeContactForm({
           id="lastName" name="lastName" type="text" required
           maxLength={60} autoComplete="off"
           className="rounded-md border bg-transparent p-2"
-          pattern="^[A-Za-zÇĞİÖŞÜçğıöşü\s\-'.]{2,}$"
+          pattern="^[A-Za-zÇĞİÖŞÜçğıöşü\\s\\-'.]{2,}$"
         />
       </div>
 

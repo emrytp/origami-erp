@@ -20,6 +20,7 @@ type Step = {
 };
 
 type Copy = {
+  eyebrow: string; // küçük üst başlık (referans sayfası ile aynı stil)
   heading: string;
   sub: string;
   steps: Step[];
@@ -28,6 +29,7 @@ type Copy = {
 
 const TEXTS: Record<Locale, Copy> = {
   tr: {
+    eyebrow: 'Adım Adım ',
     heading: 'Uygulama Yolculuğunuz',
     sub: 'ERP sistemine geçiş sürecinizin sorunsuz, verimli ve hedeflerinize tam uyumlu olması için yapılandırılmış bir yaklaşım.',
     cta: 'Demo Yolculuğuna Başla',
@@ -39,6 +41,7 @@ const TEXTS: Record<Locale, Copy> = {
     ],
   },
   en: {
+    eyebrow: 'Step-by-Step Journey',
     heading: 'Your Implementation Journey',
     sub: 'A structured approach to ensure your ERP transition is smooth, efficient and aligned with your goals.',
     cta: 'Start the Demo Journey',
@@ -50,6 +53,7 @@ const TEXTS: Record<Locale, Copy> = {
     ],
   },
   ru: {
+    eyebrow: 'Пошаговый путь',
     heading: 'Ваш путь внедрения',
     sub: 'Структурированный подход для плавного, эффективного и полностью соответствующего целям перехода на ERP.',
     cta: 'Начать демо-путь',
@@ -78,15 +82,23 @@ export default function DemoProcess() {
   return (
     <section className="w-full py-24 bg-[#0D152E] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl lg:text-5xl font-serif font-bold text-white mb-6">
-            {copy.heading}
+        {/* Başlık — Referans sayfası stili */}
+        <div className="mb-16 text-center">
+          <div className="text-[11px] tracking-[6px] text-[#C8102E] uppercase font-semibold">
+            {copy.eyebrow}
+          </div>
+          <h2 className="mt-1 text-4xl sm:text-5xl font-extrabold tracking-tight text-white font-[Poppins]">
+            <span className="relative inline-block">
+              {copy.heading}
+              <span className="absolute bottom-[-8px] left-1/2 -translate-x-1/2 h-[3px] w-16 bg-[#C8102E] rounded-full" />
+            </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-5 text-[clamp(15px,1.4vw,20px)] text-gray-300 max-w-3xl mx-auto leading-relaxed [text-wrap:balance]">
             {copy.sub}
           </p>
         </div>
 
+        {/* Adımlar */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {copy.steps.map((step, index) => (
             <div key={index} className="group relative h-full">
@@ -94,7 +106,7 @@ export default function DemoProcess() {
                 <div className="hidden lg:block absolute top-16 left-full w-8 h-0.5 bg-gradient-to-r from-[#C8102E] to-transparent z-10" />
               )}
 
-              {/* DIŞ GLOW: kutunun çevresi parlasın */}
+              {/* Dış glow */}
               <span
                 className="pointer-events-none absolute -inset-6 rounded-[30px] -z-10
                            opacity-0 group-hover:opacity-60

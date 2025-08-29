@@ -1,9 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Header from '@/components/Header';
 import Image from 'next/image';
 import Link from 'next/link';
+import DemoProcess from '@/components/DemoProcess';
+import CTASection from '@/components/CTASection';
 
 type Locale = 'tr' | 'en' | 'ru';
 
@@ -26,23 +27,12 @@ const TEXTS: Record<
       ctaModules: string;
       scroll: string;
     };
-    story: {
-      title: string;
-      text: string;
-    };
+    story: { title: string; text: string };
     mv: {
       kicker: string;
       title: string;
-      mission: {
-        title: string;
-        text: string;
-        bullets: { b1: string; b2: string; b3: string };
-      };
-      vision: {
-        title: string;
-        text: string;
-        bullets: { b1: string; b2: string; b3: string };
-      };
+      mission: { title: string; text: string; bullets: { b1: string; b2: string; b3: string } };
+      vision: { title: string; text: string; bullets: { b1: string; b2: string; b3: string } };
     };
   }
 > = {
@@ -100,81 +90,43 @@ const TEXTS: Record<
       ctaModules: 'View Modules',
       scroll: 'Scroll down'
     },
-    story: {
-      title: 'Our Story',
-      text:
-        'Since day one, our goal has been to simplify complex workflows and deliver accessible, flexible software. We combined experience from many industries into one robust platform. We continuously evolve to understand our partners’ needs and provide the most suitable solutions, staying up to date with technology. Today, we support businesses of all sizes on their digital transformation journey.'
-    },
+    story: { title: 'Our Story', text: 'Since day one, our goal has been to simplify complex workflows and deliver accessible, flexible software.' },
     mv: {
       kicker: 'OUR VALUES',
       title: 'Mission & Vision',
       mission: {
         title: 'Our Mission',
-        text:
-          'Accelerate digital transformation and deliver software that creates sustainable competitive advantage.',
-        bullets: {
-          b1: 'Clear, intuitive interfaces',
-          b2: 'Customizable modular architecture',
-          b3: 'Fast onboarding & support'
-        }
+        text: 'Accelerate digital transformation and deliver software that creates sustainable competitive advantage.',
+        bullets: { b1: 'Clear interfaces', b2: 'Customizable modular architecture', b3: 'Fast onboarding & support' }
       },
       vision: {
         title: 'Our Vision',
-        text:
-          'Become a trusted enterprise software brand—regional leader with a global footprint.',
-        bullets: {
-          b1: 'Continuous innovation',
-          b2: 'Customer-driven development',
-          b3: 'Long-term partnerships'
-        }
+        text: 'Become a trusted enterprise software brand—regional leader with a global footprint.',
+        bullets: { b1: 'Continuous innovation', b2: 'Customer-driven development', b3: 'Long-term partnerships' }
       }
     }
   },
   ru: {
-    hero: {
-      imageAlt: 'Команда Origami',
-      kicker: 'О НАС',
-      titleBefore: 'Команда, которая',
-      titleHighlight: 'двигает ваш бизнес вперёд',
-      subtitle:
-        'В Origami мы создаём простые и мощные продукты, ускоряющие процессы, повышающие эффективность и поддерживающие рост.',
-      ctaDemo: 'Связаться с нами',
-      ctaModules: 'Посмотреть модули',
-      scroll: 'Листайте вниз'
-    },
-    story: {
-      title: 'Наша история',
-      text:
-        'С самого начала наша цель — упростить сложные процессы и предоставить доступные, гибкие решения. Мы объединили опыт из разных отраслей в одной платформе. Мы постоянно развиваемся, чтобы понимать потребности наших партнёров и предлагать им наиболее подходящие решения, следим за новыми технологиями. Сегодня мы сопровождаем компании любого масштаба в их пути цифровой трансформации.'
-    },
+    hero: { imageAlt: 'Команда Origami', kicker: 'О НАС', titleBefore: 'Команда, которая', titleHighlight: 'двигает ваш бизнес вперёд', subtitle: 'В Origami мы создаём простые и мощные продукты...', ctaDemo: 'Связаться с нами', ctaModules: 'Посмотреть модули', scroll: 'Листайте вниз' },
+    story: { title: 'Наша история', text: 'С самого начала наша цель — упростить сложные процессы и предоставить доступные, гибкие решения.' },
     mv: {
       kicker: 'НАШИ ЦЕННОСТИ',
       title: 'Миссия и Видение',
       mission: {
         title: 'Наша миссия',
-        text:
-          'Ускорять цифровую трансформацию и давать устойчивое конкурентное преимущество с помощью ПО.',
-        bullets: {
-          b1: 'Понятные интерфейсы',
-          b2: 'Модульная настраиваемость',
-          b3: 'Быстрый запуск и поддержка'
-        }
+        text: 'Ускорять цифровую трансформацию и давать устойчивое конкурентное преимущество с помощью ПО.',
+        bullets: { b1: 'Понятные интерфейсы', b2: 'Модульная настраиваемость', b3: 'Быстрый запуск и поддержка' }
       },
       vision: {
         title: 'Наше видение',
-        text:
-          'Стать надёжным брендом корпоративного ПО: лидер в регионе с глобальными амбициями.',
-        bullets: {
-          b1: 'Постоянные инновации',
-          b2: 'Разработка, ориентированная на клиента',
-          b3: 'Долгосрочные партнёрства'
-        }
+        text: 'Стать надёжным брендом корпоративного ПО: лидер в регионе с глобальными амбициями.',
+        bullets: { b1: 'Постоянные инновации', b2: 'Ориентация на клиента', b3: 'Долгосрочные партнёрства' }
       }
     }
   }
 };
 
-export default function AboutPage() {
+export default function AboutUs() {
   const [locale, setLocale] = useState<Locale>('tr');
 
   useEffect(() => {
@@ -188,9 +140,7 @@ export default function AboutPage() {
   const t = TEXTS[locale];
 
   return (
-    <div className="min-h-screen bg-white font-sans">
-      <Header />
-
+    <>
       {/* HERO */}
       <section className="relative w-full h-screen flex items-center justify-center text-white overflow-hidden">
         <Image
@@ -250,63 +200,106 @@ export default function AboutPage() {
         </p>
       </section>
 
-      {/* MİSYON & VİZYON */}
-      <section className="relative w-full py-16 lg:py-20 overflow-hidden bg-[#0D152E]">
-        <div className="pointer-events-none absolute -top-24 -left-24 h-[420px] w-[420px] rounded-full bg-[#C8102E] opacity-20 blur-[140px]" />
-        <div className="pointer-events-none absolute bottom-0 -right-32 h-[360px] w-[360px] rounded-full bg-[#3B4A87] opacity-30 blur-[120px]" />
+      {/* UYGULAMA YOLCULUĞUNUZ */}
+      <DemoProcess />
+
+      {/* CTA */}
+      <CTASection />
+
+      {/* MİSYON & VİZYON (temizlenmiş) */}
+      <section className="relative w-full py-16 lg:py-20 overflow-hidden bg-gradient-to-b from-[#F8FAFF] to-[#EEF2FF]">
         <div className="max-w-7xl mx-auto px-8 relative">
-          <div className="text-center mb-14">
-            <p className="uppercase tracking-[6px] text-[#FFCFD6] text-sm font-semibold font-serif">
+          <div className="text-center mb-12 lg:mb-14">
+            <p className="uppercase tracking-[6px] text-[#A00D26] text-xs sm:text-sm font-semibold">
               {t.mv.kicker}
             </p>
-            <h3 className="mt-3 text-4xl lg:text-5xl font-extrabold text-white relative inline-block font-serif">
+            <h3 className="mt-2 text-3xl lg:text-5xl font-extrabold text-[#0D152E]">
               {t.mv.title}
-              <span className="block w-24 h-[3px] bg-gradient-to-r from-[#C8102E] to-[#FFB3BF] mx-auto mt-3 rounded-full" />
             </h3>
+            <span className="block w-24 h-[3px] bg-gradient-to-r from-[#C8102E] to-[#A00D26] mx-auto mt-3 rounded-full" />
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
             {/* Misyon */}
-            <div className="group relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 hover:bg-white/10 transition">
+            <div className="relative rounded-2xl bg-white ring-1 ring-slate-200 p-6 lg:p-7 flex flex-col">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#C8102E] to-[#A00D26] grid place-items-center shadow-lg">
-                  <span className="text-white text-xl">🎯</span>
+                {/* emoji rozet */}
+                <div className="relative shrink-0">
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#C8102E] to-[#A00D26] grid place-items-center text-white text-lg shadow-sm ring-4 ring-[#FFF0F2]">
+                    <span aria-hidden>🎯</span>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-3xl lg:text-4xl font-bold text-white font-serif">
+
+                <div className="min-w-0">
+                  <h4 className="text-xl lg:text-2xl font-bold text-[#0D152E]">
                     {t.mv.mission.title}
                   </h4>
-                  <p className="mt-2 text-white/85 leading-relaxed">
+                  <p className="mt-2 text-slate-700 leading-relaxed">
                     {t.mv.mission.text}
                   </p>
                 </div>
               </div>
-              <ul className="mt-5 space-y-2 text-sm text-white/80">
-                <li className="flex gap-2"><span className="text-[#FFB3BF]">•</span> {t.mv.mission.bullets.b1}</li>
-                <li className="flex gap-2"><span className="text-[#FFB3BF]">•</span> {t.mv.mission.bullets.b2}</li>
-                <li className="flex gap-2"><span className="text-[#FFB3BF]">•</span> {t.mv.mission.bullets.b3}</li>
+
+              {/* divider */}
+              <div className="my-5 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+
+              <ul className="space-y-2.5 text-sm text-slate-700">
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 text-[#16a34a]">✓</span>
+                  <span>{t.mv.mission.bullets.b1}</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 text-[#16a34a]">✓</span>
+                  <span>{t.mv.mission.bullets.b2}</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 text-[#16a34a]">✓</span>
+                  <span>{t.mv.mission.bullets.b3}</span>
+                </li>
               </ul>
+              {/* push footer */}
+              <div className="mt-4" />
             </div>
 
             {/* Vizyon */}
-            <div className="group relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 hover:bg-white/10 transition">
+            <div className="relative rounded-2xl bg-white ring-1 ring-slate-200 p-6 lg:p-7 flex flex-col">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#6BA5FF] to-[#3B6BFF] grid place-items-center shadow-lg">
-                  <span className="text-white text-xl">🚀</span>
+                {/* emoji rozet */}
+                <div className="relative shrink-0">
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#6BA5FF] to-[#3B6BFF] grid place-items-center text-white text-lg shadow-sm ring-4 ring-[#EEF4FF]">
+                    <span aria-hidden>🚀</span>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-3xl lg:text-4xl font-bold text-white font-serif">
+
+                <div className="min-w-0">
+                  <h4 className="text-xl lg:text-2xl font-bold text-[#0D152E]">
                     {t.mv.vision.title}
                   </h4>
-                  <p className="mt-2 text-white/85 leading-relaxed">
+                  <p className="mt-2 text-slate-700 leading-relaxed">
                     {t.mv.vision.text}
                   </p>
                 </div>
               </div>
-              <ul className="mt-5 space-y-2 text-sm text-white/80">
-                <li className="flex gap-2"><span className="text-[#FFB3BF]">•</span> {t.mv.vision.bullets.b1}</li>
-                <li className="flex gap-2"><span className="text-[#FFB3BF]">•</span> {t.mv.vision.bullets.b2}</li>
-                <li className="flex gap-2"><span className="text-[#FFB3BF]">•</span> {t.mv.vision.bullets.b3}</li>
+
+              {/* divider */}
+              <div className="my-5 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+
+              <ul className="space-y-2.5 text-sm text-slate-700">
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 text-[#2563eb]">✓</span>
+                  <span>{t.mv.vision.bullets.b1}</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 text-[#2563eb]">✓</span>
+                  <span>{t.mv.vision.bullets.b2}</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 text-[#2563eb]">✓</span>
+                  <span>{t.mv.vision.bullets.b3}</span>
+                </li>
               </ul>
+              {/* push footer */}
+              <div className="mt-4" />
             </div>
           </div>
         </div>
@@ -314,6 +307,6 @@ export default function AboutPage() {
 
       <div id="moduller" />
       <div id="demo" />
-    </div>
+    </>
   );
 }

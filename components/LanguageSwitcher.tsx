@@ -14,7 +14,7 @@ export default function LanguageSwitcher() {
 
   function setLang(code:string) {
     document.cookie = `NEXT_LOCALE=${code}; Path=/; Max-Age=31536000; SameSite=Lax`;
-    router.refresh(); // sayfa aynı URL’de seçilen dil ile yeniden render olur
+    router.refresh(); 
   }
 
   return (

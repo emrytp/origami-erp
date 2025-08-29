@@ -29,7 +29,9 @@ function IndustryCard({ item }: { item: Item }) {
   return (
     <motion.article
       id={item.id}
-      className="group relative h-[18rem] md:h-[20rem] rounded-3xl overflow-hidden ring-1 ring-gray-100 bg-white shadow-md hover:shadow-2xl transition-shadow select-none"
+      className="group relative h-[20rem] rounded-3xl overflow-hidden
+                 ring-1 ring-gray-100 bg-white shadow-md hover:shadow-2xl
+                 transition-shadow select-none"
       onPointerEnter={() => setOpen(true)}
       onPointerLeave={() => setOpen(false)}
       onClick={() => setOpen((v) => !v)}
@@ -38,25 +40,21 @@ function IndustryCard({ item }: { item: Item }) {
       <img
         src={item.image}
         alt={item.alt}
-        className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
+        className="absolute inset-0 w-full h-full object-cover object-center
+                   transition-transform duration-500 ease-out group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-black/0 to-black/10 pointer-events-none" />
 
       {/* Başlık */}
       <div
-        className={`absolute inset-0 z-20 flex items-center justify-center transition-opacity duration-500 ${
-          open ? 'opacity-0' : 'opacity-100'
-        }`}
+        className={`absolute inset-0 z-20 flex items-center justify-center
+                    transition-opacity duration-500 ${open ? 'opacity-0' : 'opacity-100'}`}
       >
         <h3
-          className={[
-            'font-serif font-bold text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)] text-center leading-tight',
-            'px-4',
-            // akıllı sarmalama + kelime kırma
-            '[text-wrap:balance] break-words [overflow-wrap:anywhere] [hyphens:auto]',
-            // ekrana göre otomatik boyut
-            'text-[clamp(20px,2.6vw,32px)] md:text-[clamp(22px,2.2vw,36px)]'
-          ].join(' ')}
+          className="font-serif font-bold text-white text-center leading-tight px-4
+                     drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]
+                     [text-wrap:balance] break-words [overflow-wrap:anywhere] [hyphens:auto]
+                     text-[clamp(20px,2.4vw,32px)] md:text-[clamp(22px,2.1vw,36px)]"
         >
           {item.title}
         </h3>
@@ -74,13 +72,9 @@ function IndustryCard({ item }: { item: Item }) {
       >
         <div className="p-6 md:p-8 w-full max-h-full overflow-y-auto">
           <p
-            className={[
-              'text-[#0D152E] leading-relaxed',
-              // ekrana göre otomatik boyut
-              'text-[clamp(13px,1.05vw,16px)]',
-              // uzun kelimelerde kırma/ayırma
-              'break-words [word-break:break-word] [overflow-wrap:anywhere] [hyphens:auto]'
-            ].join(' ')}
+            className="text-[#0D152E] leading-relaxed
+                       text-[clamp(14px,1.05vw,16px)]
+                       break-words [word-break:break-word] [overflow-wrap:anywhere] [hyphens:auto]"
           >
             {item.description}
           </p>
@@ -93,15 +87,17 @@ function IndustryCard({ item }: { item: Item }) {
 const TEXTS: Record<
   Locale,
   {
-    heading: string;
+    eyebrow: string;   // küçük üst başlık (referans sayfasıyla aynı stil)
+    heading: string;   // büyük başlık
     subheading: string;
     items: Omit<Item, 'image'>[];
   }
 > = {
   tr: {
+    eyebrow: 'Hizmet Verdiğimiz Sektörler',
     heading: 'Sektöre Özel Çözümler',
     subheading:
-      'Her sektöre özel geliştirilen ERP çözümlerimizle işinizin tüm ihtiyaçlarına cevap veriyoruz.',
+      '',
     items: [
       { id: 'manufacturing', title: 'Üretim', description: 'Uçtan uca izlenebilirlik, kalite kontrol, doğru planlama ve tedarik zincirinde gerçek zamanlı koordinasyon. Maliyetleri düşürür, çevrim süresini kısaltır.', alt: 'Üretim tesisi' },
       { id: 'retail', title: 'Perakende ‎‎ & E-Ticaret', description: 'Omnichannel satış, dinamik fiyatlama ve stok optimizasyonu. Mağaza, depo ve e-ticareti tek merkezden yönetin; müşteri deneyimini uçtan uca iyileştirin.', alt: 'Perakende ve e-ticaret ortamı' },
@@ -111,25 +107,27 @@ const TEXTS: Record<
     ]
   },
   en: {
+    eyebrow: 'Industries We Serve',
     heading: 'Industry-Specific Solutions',
     subheading:
       'We deliver ERP tailored for each industry to cover every need of your business end to end.',
     items: [
       { id: 'manufacturing', title: 'Manufacturing', description: 'End-to-end traceability, quality control, accurate planning and real-time supply chain coordination. Reduce costs and cycle times.', alt: 'Manufacturing facility' },
-      { id: 'retail', title: 'Retail & E‑commerce', description: 'Omnichannel sales, dynamic pricing and inventory optimization. Manage stores, warehouses and web shop from a single hub and elevate CX.', alt: 'Retail and e-commerce environment' },
-      { id: 'construction', title: 'Construction', description: 'Project budgets, BoQ/estimations, progress payments and field coordination. Real-time site‑to‑HQ data flow with full regulatory compliance.', alt: 'Construction site' },
+      { id: 'retail', title: 'Retail & E-commerce', description: 'Omnichannel sales, dynamic pricing and inventory optimization. Manage stores, warehouses and web shop from a single hub and elevate CX.', alt: 'Retail and e-commerce environment' },
+      { id: 'construction', title: 'Construction', description: 'Project budgets, BoQ/estimations, progress payments and field coordination. Real-time site-to-HQ data flow with full regulatory compliance.', alt: 'Construction site' },
       { id: 'defense', title: 'Defense Industry', description: 'Configuration management, sensitive procurement and traceability. From R&D to mass production with secure authorization and process integrity.', alt: 'Defense industry visual' },
       { id: 'sports', title: 'Sports', description: 'Memberships, class scheduling and payments for gyms, martial arts schools and clubs. Manage coaches, students and facilities in one panel.', alt: 'Sports and facility management' }
     ]
   },
   ru: {
+    eyebrow: 'Отрасли',
     heading: 'Отраслевые решения',
     subheading:
       'Мы создаём ERP под каждую отрасль — закрываем все потребности бизнеса от начала до конца.',
     items: [
       { id: 'manufacturing', title: 'Производство', description: 'Сквозная прослеживаемость, контроль качества, точное планирование и координация цепочки поставок в реальном времени. Снижение затрат и циклов.', alt: 'Производственная площадка' },
-      { id: 'retail', title: 'Розница и E‑commerce', description: 'Омниканальные продажи, динамическое ценообразование и оптимизация запасов. Управляйте магазинами, складом и сайтом из единого центра.', alt: 'Розничная торговля и e-commerce' },
-      { id: 'construction', title: 'Строительство', description: 'Бюджеты проектов, ведомости объёмов (BoQ), акты выполненных работ и координация площадок. Онлайн‑данные с объекта и полное соответствие нормам.', alt: 'Строительная площадка' },
+      { id: 'retail', title: 'Розница и E-commerce', description: 'Омниканальные продажи, динамическое ценообразование и оптимизация запасов. Управляйте магазинами, складом и сайтом из единого центра.', alt: 'Розничная торговля и e-commerce' },
+      { id: 'construction', title: 'Строительство', description: 'Бюджеты проектов, ведомости объёмов (BoQ), акты выполненных работ и координация площадок. Онлайн-данные с объекта и полное соответствие нормам.', alt: 'Строительная площадка' },
       { id: 'defense', title: 'Оборонная промышленность', description: 'Управление конфигурациями, чувствительные закупки и отслеживаемость. От R&D до серийного производства с безопасным разграничением доступа.', alt: 'Оборонная промышленность' },
       { id: 'sports', title: 'Спорт', description: 'Абонементы, расписание занятий и платежи для залов, школ единоборств и клубов. Удобное управление тренерами, учениками и объектами.', alt: 'Спортивное и объектное управление' }
     ]
@@ -137,12 +135,9 @@ const TEXTS: Record<
 };
 
 const IMAGE_MAP: Record<Item['id'], string> = {
-  manufacturing:
-    'https://readdy.ai/api/search-image?query=Modern%20manufacturing%20facility%20with%20automated%20production%20lines%20and%20quality%20control%20systems%2C%20clean%20industrial%20environment%20with%20advanced%20machinery%20and%20technology%20integration&width=300&height=200&seq=manufacturing-industry&orientation=landscape',
-  retail:
-    'https://readdy.ai/api/search-image?query=Modern%20retail%20store%20environment%20with%20digital%20displays%20and%20point%20of%20sale%20systems%2C%20clean%20contemporary%20retail%20space%20with%20technology%20integration&width=300&height=200&seq=retail-industry&orientation=landscape',
-  construction:
-    'https://readdy.ai/api/search-image?query=Construction%20site%20with%20modern%20project%20management%20technology%2C%20architectural%20planning%20and%20building%20development%20with%20digital%20tools%20integration&width=300&height=200&seq=construction-industry&orientation=landscape',
+  manufacturing: '/manufacturing.png',
+  retail: '/retail.png',
+  construction: '/construction.png',
   defense: '/army.png',
   sports: '/spor.png'
 };
@@ -187,30 +182,31 @@ export default function IndustriesServed() {
   return (
     <section
       id="industries-served"
-      // hyphenation için doğru dil — tarayıcıya ipucu
       lang={locale}
-      className="w-full py-24 bg-gradient-to-b from-gray-50 to-white"
+      className="w-full py-24 bg-gradient-to-b from-white to-gray-50"
     >
       <div className="max-w-7xl mx-auto px-8">
-        {/* Başlık */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          viewport={{ once: true, amount: 0.35 }}
-        >
-          <h2 className="text-[clamp(28px,3.6vw,44px)] font-serif font-bold text-[#0D152E] mb-6 [text-wrap:balance]">
-            {t.heading}
+        {/* Başlık — Referans sayfası stili */}
+        <div className="mb-16 text-center">
+          <div className="text-[11px] tracking-[6px] text-[#C8102E] uppercase font-semibold">
+            {t.eyebrow}
+          </div>
+          <h2 className="mt-1 text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0D152E] font-[Poppins]">
+            <span className="relative inline-block">
+              {t.heading}
+              <span className="absolute bottom-[-8px] left-1/2 -translate-x-1/2 h-[3px] w-16 bg-[#C8102E] rounded-full" />
+            </span>
           </h2>
-          <p className="text-[clamp(15px,1.4vw,20px)] text-gray-600 max-w-3xl mx-auto leading-relaxed [text-wrap:balance]">
+
+          {/* alt açıklama */}
+          <p className="mt-5 text-[clamp(15px,1.4vw,20px)] text-gray-600 max-w-3xl mx-auto leading-relaxed [text-wrap:balance]">
             {t.subheading}
           </p>
-        </motion.div>
+        </div>
 
-        {/* Kartlar */}
+        {/* Kartlar — hepsi tek satır (5 adet), scroll yok */}
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-5 gap-8"
+          className="grid grid-cols-5 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
